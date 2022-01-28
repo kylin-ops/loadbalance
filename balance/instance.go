@@ -5,16 +5,18 @@ import "strconv"
 type Instance struct {
 	Host      string
 	Port      int64
+	Scheme    string
 	Weight    int64
 	CallTimes int64
 	Type      string
 }
 
-func NewInstance(host string, port int64, wc int64) *Instance {
+func NewInstance(scheme, host string, port int64, weigth int64) *Instance {
 	return &Instance{
 		Host:      host,
 		Port:      port,
-		Weight:    wc,
+		Weight:    weigth,
+		Scheme:    scheme,
 		CallTimes: 0,
 	}
 }
